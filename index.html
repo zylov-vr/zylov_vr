@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="ru" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Zylov VR — Armour Plus</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;600;700&family=Orbitron:wght@400;700;900&family=Inter:wght@300;400;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <!-- ======= SPLASH SCREEN ======= -->
+  <div id="splash" class="splash">
+    <div class="splash-bg"></div>
+    <canvas id="splashCanvas" class="splash-canvas"></canvas>
+    <div class="splash-content">
+      <div class="splash-logo-wrap">
+        <div class="splash-logo">
+          <span class="splash-zylov" id="splashZylov"></span><span class="splash-vr" id="splashVr"></span>
+        </div>
+        <div class="splash-line-left"></div>
+        <div class="splash-line-right"></div>
+      </div>
+      <div class="splash-tagline" id="splashTagline"></div>
+      <div class="splash-bar-wrap">
+        <div class="splash-bar"><div class="splash-bar-fill"></div></div>
+        <span class="splash-percent" id="splashPercent">0%</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ======= MAIN SITE ======= -->
+  <div id="mainSite" class="main-site hidden">
+
+    <!-- NAVBAR -->
+    <header class="navbar" id="navbar">
+      <div class="nav-container">
+
+        <!-- Logo -->
+        <a href="#home" class="nav-logo" data-section="home">
+          <div class="logo-box">
+            <span class="logo-zylov" id="logoZylov">ZYLOV</span><span class="logo-vr" id="logoVr">VR</span>
+          </div>
+        </a>
+
+        <!-- Nav links -->
+        <nav class="nav-links" id="navLinks">
+          <a href="#home"  class="nav-link active" data-section="home"  data-i18n="nav_home">Главная</a>
+          <a href="#games" class="nav-link"         data-section="games" data-i18n="nav_games">Игры</a>
+          <a href="#about" class="nav-link"         data-section="about" data-i18n="nav_about">О нас</a>
+        </nav>
+
+        <!-- Controls -->
+        <div class="nav-controls">
+          <!-- Language selector -->
+          <div class="lang-selector" id="langSelector">
+            <button class="lang-btn" id="langBtn">
+              <i class="fas fa-globe"></i>
+              <span id="langCurrent">RU</span>
+              <i class="fas fa-chevron-down"></i>
+            </button>
+            <div class="lang-dropdown" id="langDropdown">
+              <button class="lang-option active" data-lang="ru">Русский</button>
+              <button class="lang-option" data-lang="en">English</button>
+              <button class="lang-option" data-lang="de">Deutsch</button>
+              <button class="lang-option" data-lang="uk">Українська</button>
+            </div>
+          </div>
+
+          <!-- Theme toggle -->
+          <button class="theme-toggle" id="themeToggle" title="Toggle theme">
+            <span class="theme-icon">🌙</span>
+          </button>
+
+          <!-- Mobile menu -->
+          <button class="burger" id="burger">
+            <span></span><span></span><span></span>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <!-- ======= HOME SECTION ======= -->
+    <section class="section hero-section" id="home">
+      <div class="hero-bg">
+        <div class="hero-grid"></div>
+        <div class="hero-scanline"></div>
+        <div class="hero-vignette"></div>
+      </div>
+      <div class="hero-content">
+        <h1 class="hero-title">
+          <span class="hero-welcome" data-i18n="hero_welcome">WELCOME</span>
+        </h1>
+        <p class="hero-sub" data-i18n="hero_sub">Будущее войны начинается здесь.</p>
+        <div class="hero-actions">
+          <a href="#games" class="btn btn-primary" data-i18n="hero_btn_games">Узнать больше</a>
+          <a href="#about" class="btn btn-secondary" data-i18n="hero_btn_about">О нас</a>
+        </div>
+      </div>
+      <div class="scroll-hint">
+        <span data-i18n="scroll_hint">Прокрутите вниз</span>
+        <div class="scroll-arrow"><i class="fas fa-chevron-down"></i></div>
+      </div>
+    </section>
+
+    <!-- ======= GAMES SECTION ======= -->
+    <section class="section" id="games">
+      <div class="section-container">
+        <div class="section-header">
+          <div class="section-label" data-i18n="games_label">// НАШИ ИГРЫ</div>
+          <h2 class="section-title" data-i18n="games_title">ИГРЫ</h2>
+          <p class="section-desc" data-i18n="games_desc">Погрузитесь в мир реалистичного военного VR-опыта</p>
+        </div>
+
+        <div class="games-grid">
+          <div class="game-card" id="armourPlusCard">
+            <div class="card-glow"></div>
+            <div class="card-badge" data-i18n="card_coming">СКОРО</div>
+            <div class="card-image">
+              <div class="card-tank-art">
+                <div class="art-tank">
+                  <div class="art-body"></div>
+                  <div class="art-turret"></div>
+                  <div class="art-barrel"></div>
+                  <div class="art-tracks-l"></div>
+                </div>
+                <div class="art-smoke"></div>
+                <div class="art-ground"></div>
+              </div>
+            </div>
+            <div class="card-content">
+              <div class="card-platform"><i class="fas fa-vr-cardboard"></i> Unity VR</div>
+              <h3 class="card-title">ARMOUR <span class="red">+</span></h3>
+              <p class="card-desc" data-i18n="card_desc">Реалистичный VR-симулятор танкового боя. Управляй бронетехникой, координируй экипаж и веди сражения на исторических картах.</p>
+
+              <div class="card-details">
+                <div class="detail-row">
+                  <i class="fas fa-calendar-alt"></i>
+                  <span data-i18n="card_release">Дата выхода:</span>
+                  <strong>17.09.2027</strong>
+                </div>
+              </div>
+
+              <div class="card-tags">
+                <span class="tag" data-i18n="tag_vr">VR</span>
+                <span class="tag" data-i18n="tag_tank">Танки</span>
+                <span class="tag" data-i18n="tag_sim">Симулятор</span>
+                <span class="tag" data-i18n="tag_war">Война</span>
+              </div>
+
+              <button class="btn btn-primary card-btn" data-i18n="card_btn">Следить за разработкой</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======= ABOUT SECTION ======= -->
+    <section class="section" id="about">
+      <div class="section-container">
+        <div class="section-header">
+          <div class="section-label" data-i18n="about_label">// О КОМПАНИИ</div>
+          <h2 class="section-title" data-i18n="about_title">О НАС</h2>
+        </div>
+
+        <div class="about-center">
+          <div class="about-company-name">
+            <span class="about-zylov" id="aboutZylov">ZYLOV</span><span class="about-vr" id="aboutVr">VR</span>
+          </div>
+          <p class="about-p" data-i18n="about_p1">Zylov VR — независимая игровая студия, специализирующаяся на создании реалистичных VR-игр с военной тематикой. Мы верим, что виртуальная реальность — это будущее игровой индустрии.</p>
+          <p class="about-p" data-i18n="about_p2">Наша цель — создавать глубокий, захватывающий опыт, который поставит игрока прямо в центр исторических сражений. Armour Plus — это наш первый крупный проект.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+      <div class="footer-content">
+        <div class="footer-logo">
+          <span class="footer-zylov" id="footerZylov">ZYLOV</span><span class="footer-vr" id="footerVr">VR</span>
+        </div>
+        <p class="footer-game">ARMOUR <span class="red">+</span></p>
+      </div>
+    </footer>
+
+  </div><!-- /mainSite -->
+
+  <script src="js/i18n.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
